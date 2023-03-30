@@ -1,0 +1,233 @@
+.jobs {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.jobs__action {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+}
+
+.jobs__projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 56px;
+}
+
+.jobs__projects__project {
+  width: 100%;
+  max-width: 545px;
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  transition: transform 0.3s var(--timing);
+}
+
+.jobs__projects__project__content {
+  width: 100%;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.jobs__projects__project__content img {
+  max-width: 64px;
+}
+
+.jobs__projects__project__content__title {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.jobs__projects__project__content__title span {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.jobs__projects__project__content__title p {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.jobs__projects__project:hover .jobs__projects__project__content__title span,
+.jobs__projects__project:hover .jobs__projects__project__content__title p {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.jobs__projects__project__img {
+  width: 100%;
+  max-width: 315px;
+  overflow: hidden;
+}
+
+.jobs__projects__project__img img {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.jobs__projects__project img {
+  transition: transform 0.4s;
+}
+
+.jobs__projects__project:hover img {
+  transform: scale(1.15);
+}
+
+.testimonials {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.testimonials__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+}
+
+.testimonials__title span {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.testimonials__title h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+  text-transform: uppercase;
+}
+
+.testimonials__content {
+  width: 100%;
+  max-width: 100%;
+  border-bottom: 1px solid #ffffff;
+  overflow: hidden;
+}
+
+.testimonials__content__carousel {
+  display: flex;
+  width: fit-content;
+  transition: transform 0.3s var(--timing);
+  /* transform: translateX(-1000px); */
+}
+
+.testimonials__content__testimonial {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  /* opacity: 0; */
+  transition: transform 0.3s var(--timing);
+}
+
+.testimonials__content__testimonial__img {
+  width: 100%;
+  max-width: 340px;
+}
+
+.testimonials__content__testimonial__details {
+  width: 100%;
+  max-width: 545px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.testimonials__content__testimonial__details__text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.testimonials__content__testimonial__details__text__author {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.testimonials__content__testimonial__details__text h3 {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.testimonials__content__testimonial__details__text p {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 31px;
+}
+
+.testimonials__content__testimonial__details__text span {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.01em;
+}
+
+.testimonials__content__testimonial__details__controls {
+  display: flex;
+  gap: 14px;
+}
+
+.testimonials__content__testimonial__details__controls > div {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.testimonials__content__testimonial__details__controls > div:hover {
+  box-shadow: var(--shadow);
+  transform: scale(1.05);
+}
+
+.testimonials__content__testimonial__details__controls img {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.testimonials__content__testimonial__details__controls div.disabled img {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.testimonials__content__testimonial__details__controls > div.disabled:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+.testimonials__logos {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

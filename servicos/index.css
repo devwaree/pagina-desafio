@@ -1,0 +1,119 @@
+.servicos {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.servicos__skills {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.servicos__skills__skill,
+.servicos__skills__skill--active {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(20, 20, 19, 0.2);
+}
+
+.servicos__skills__skill__title {
+  width: 100%;
+}
+
+.servicos__skills__skill__title h2 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 48px;
+  text-transform: uppercase;
+}
+
+.servicos__skills__skill__title h2::before {
+  content: "\2022";
+  font-weight: 700;
+  display: inline-block;
+  width: 1em;
+}
+
+.servicos__skills__skill--active .servicos__skills__skill__title h2 {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.servicos__skills__skill__description {
+  width: 100%;
+  max-width: 660px;
+  display: flex;
+  justify-content: space-between;
+  gap: 75px;
+}
+
+.servicos__skills__skill__description__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.servicos__skills__skill__description__text p {
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(20, 19, 19, 0.8);
+}
+
+.servicos__skills__skill__description__text div {
+  overflow: hidden;
+  height: 0;
+  transition: all 0.3s var(--timing);
+}
+
+.servicos__skills__skill--active
+  .servicos__skills__skill__description__text
+  div {
+  height: 210px;
+}
+
+.servicos__skills__skill__description__text img {
+  max-width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.servicos__skills__skill__description__selector {
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.servicos__skills__skill__description__selector::before {
+  content: "";
+  width: 26px;
+  background: var(--black);
+  height: 2px;
+  position: absolute;
+  transition: transform 0.3s var(--timing);
+  transform: rotate(90deg);
+}
+
+.servicos__skills__skill__description__selector::after {
+  content: "";
+  width: 26px;
+  background: var(--black);
+  height: 2px;
+  position: absolute;
+  transform: rotate(180deg);
+  transition: transform 0.3s var(--timing);
+}
+
+.servicos__skills__skill--active
+  .servicos__skills__skill__description__selector::before,
+.servicos__skills__skill--active
+  .servicos__skills__skill__description__selector::after {
+  transform: rotate(0deg);
+}

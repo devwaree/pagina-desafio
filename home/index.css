@@ -1,0 +1,46 @@
+.banner {
+  width: 100%;
+  max-width: 595px;
+}
+
+.banner__content {
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background: url(/assets/images/title-detail.svg);
+  background-repeat: no-repeat;
+}
+
+.banner__content__title {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.banner__content__title h1 {
+  font-weight: 400;
+  font-size: 102px;
+  line-height: 90px;
+  text-transform: uppercase;
+}
+
+.banner__content__title h2 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 32px;
+  letter-spacing: -0.03em;
+}
+
+.banner__content__contacts {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  margin-top: 34px;
+}
+
+.banner__image {
+  width: 100%;
+  max-width: 602px;
+}

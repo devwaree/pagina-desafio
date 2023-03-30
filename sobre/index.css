@@ -1,0 +1,207 @@
+.bio {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.bio__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bio__content__whoami {
+  width: 100%;
+  max-width: 430px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.bio__content__whoami__avatar {
+  width: 100%;
+}
+
+.bio__content__whoami__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.bio__content__whoami__details h1 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 48px;
+
+  text-align: center;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bio__content__whoami__details h2 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  text-align: center;
+  letter-spacing: -0.03em;
+}
+
+.bio__content__info {
+  width: 100%;
+  max-width: 660px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.bio__content__info__personal {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.bio__content__info__personal__items {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.bio__content__info__personal__items > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bio__content__info__experience {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+}
+
+.bio__content__info__experience > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bio__content__info__experience__title {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bio__content__info__experience__title > div {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 48px;
+  text-align: center;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bio__content__info__experience__description {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.bio__content__info__experience__description span {
+  color: #b86adf;
+}
+
+.bio__content__info__quote {
+  padding: 40px;
+  background: var(--black);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--white);
+}
+
+.experience {
+  display: flex;
+  justify-content: space-between;
+}
+
+.experience__detail {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.experience__detail p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.experience__timeline {
+  width: 100%;
+  max-width: 658px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.experience__timeline__checkpoint {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.experience__timeline__checkpoint > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.experience__timeline__checkpoint__period {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.experience__timeline__checkpoint__company {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+}
+
+.experience__timeline__checkpoint__occupation {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 48px;
+  text-transform: uppercase;
+}

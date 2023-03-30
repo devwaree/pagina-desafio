@@ -1,0 +1,435 @@
+/**
+## Usando metodologia "BEM" (Bloco, Elemento e Modificador) para convenção 
+de nomes: [link](https://getbem.com/)
+
+- .bloco -> componente raiz
+- .bloco__elemento -> elemento que faz parte da composição do bloco
+- .bloco--modificador -> modificador de aparência, comportamento ou estado! Usado como
+flags para estilizações dinamicas (usando JS ou pseudo-classes de efeito).
+Exemplo: .sidebar--hidden
+
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@700&display=swap");
+
+:root {
+  --white: #fff;
+  --black: #141313;
+  --gradient: linear-gradient(
+    270.16deg,
+    #ffb147 5.74%,
+    #ff6c63 50.64%,
+    #b86adf 92.05%
+  );
+  --timing: cubic-bezier(0.77, 0, 0.18, 1);
+  --shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+/* Scrollbar Width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--black);
+}
+
+/* Scrollbar Handle ao passar o mouse */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--black);
+}
+
+/* Seleção de texto */
+::selection {
+  color: var(--white);
+  background: #b86adf;
+}
+::-moz-selection {
+  color: var(--white);
+  background: #b86adf;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0 solid transparent;
+}
+
+/* Previne que haja mudança no tamanho de fonte nos dispositivos iOS */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* reseta o line-height do body */
+body {
+  min-height: 100vh;
+  line-height: 1;
+  text-rendering: optimizeSpeed;
+  background-color: var(--white);
+  font-family: "IBM Plex Sans", sans-serif;
+  color: var(--black);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  resize: none;
+}
+
+/* ------ Auxiliares -------- */
+
+.h-full {
+  height: 100%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.white {
+  color: var(--white);
+}
+
+.container {
+  width: 100%;
+  max-width: 1235px;
+}
+
+@media (max-width: 1240px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: auto;
+  }
+}
+
+.row,
+.row-center,
+.row-between {
+  display: flex;
+  flex-direction: row;
+}
+
+.row-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.row-between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.col,
+.col-center,
+.col-between {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.col-between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ------ Componentes -------- */
+
+.sidebar {
+  background-color: var(--black);
+  height: auto;
+  min-height: 100vh;
+  min-width: 285px;
+  color: var(--white);
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar__content {
+  position: fixed;
+  height: 100vh;
+  padding: 2rem;
+}
+
+.sidebar__container {
+  width: 100%;
+  height: 100%;
+  max-width: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar__logo {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 39px;
+}
+
+.sidebar__menu {
+  margin-top: 100px;
+}
+
+.sidebar__menu__item {
+  width: fit-content;
+  list-style: none;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.sidebar__menu__item::before {
+  content: "";
+  width: 0;
+  height: 4px;
+  background: var(--gradient);
+  display: block;
+  position: absolute;
+  top: calc(50% - 1px);
+  z-index: -1;
+  transition: all 0.2s var(--timing);
+}
+
+.sidebar__menu__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.sidebar__menu__item--active {
+  font-weight: 700;
+}
+
+.sidebar__menu__item--active::before,
+.sidebar__menu__item:hover::before {
+  width: calc(100% + 10px);
+}
+
+.sidebar__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.sidebar__footer__social {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar__footer__social a {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar__footer__social p {
+  padding-left: 12px;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.3s var(--timing);
+}
+
+.sidebar__footer__social a::before {
+  content: "";
+  width: 44px;
+  height: 44px;
+  background: var(--gradient);
+  display: block;
+  position: absolute;
+  /* top: calc(50% - 1px); */
+  top: -2px;
+  left: -2px;
+  z-index: -1;
+  transition: all 0.3s var(--timing);
+  border-radius: 44px;
+}
+
+.sidebar__footer__social a:hover::before {
+  width: 100%;
+}
+
+.sidebar__footer__social a:hover p {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sidebar__footer_copy p {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.button button {
+  padding: 1rem 2.5rem;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  display: flex;
+  gap: 0.5rem;
+  color: var(--white);
+  cursor: pointer;
+  position: relative;
+
+  /* Default dark */
+  background: var(--black);
+  transition: transform 0.3s;
+}
+
+.button button:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--black);
+  transform: translate3d(0px, 10px, 0) scale(0.95);
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+.button button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  border-radius: inherit;
+}
+
+.button button:hover {
+  transform: scale(1.05);
+}
+
+.button button:hover:before {
+  opacity: 0.7;
+}
+
+.button--dark button,
+.button--dark button:before {
+  background: var(--black);
+}
+
+.button--light button,
+.button--light button:before {
+  background: var(--gradient);
+}
+
+.button--transparent button {
+  color: var(--black);
+  text-decoration: underline;
+}
+
+.button--transparent button,
+.button--transparent button:before {
+  background: transparent;
+}
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  padding: 80px 0 80px 115px;
+}
+
+.main-center {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 32px 80px 32px;
+}
+
+.secondary {
+  width: 100%;
+  display: flex;
+  padding: 120px 0 120px 115px;
+  background: var(--gradient);
+  color: var(--white);
+}
+
+.secondary-center {
+  width: 100%;
+  display: flex;
+  padding: 100px 32px 100px 32px;
+  justify-content: center;
+  align-items: center;
+  background: var(--gradient);
+  color: var(--white);
+}
+
+.personal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background: var(--black);
+  opacity: 0.2;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title span {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.title h2 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+  text-transform: uppercase;
+}
